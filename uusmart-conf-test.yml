@@ -1,0 +1,56 @@
+spring.rabbitmq.host: goodtime-iot.com
+spring.rabbitmq.port: 5672
+spring.rabbitmq.username: admin
+spring.rabbitmq.password: 123456
+
+
+#用户请求SSID redis保存前缀
+diy.redis.prefix.appssid: app:ssid
+# ssid 的有效时间，单位：秒 
+diy.redis.appssid.validity.time: 180
+
+
+
+#用户登录信息 redis保存前缀
+diy.redis.prefix.login.token: app:login:token
+# token 的有效时间，单位：天 
+diy.redis.token.validit.time: 3
+
+
+#用户保存校验码信息 redis保存前缀
+diy.redis.prefix.check_code: app:check_code
+# checkCode 的有效时间，单位：分钟 
+diy.redis.check_code.validit.time: 5
+
+# ssid 的有效时间，单位：秒 
+diy.redis.prefix.mqtt.msg.id: mqtt:msg:id
+
+
+#用户保存邮箱发送次数信息 redis保存前缀
+diy.redis.prefix.check_email_number: app:check_email
+# email 的有效邮箱数量，单位：每天支持N条
+diy.redis.check_code.validit.number: 5
+
+#MQTT每条消息的等待响应超时时间 2秒
+dir.mqtt.push.msg.timeOut: 2000
+#MQTT每条消息重发次数为 2次
+dir.mqtt.repush.msg.number: 2
+#MQTT每条消息回复查询间隔 100 毫秒
+dir.mqtt.check.msg.number: 100
+
+
+# HTTP协议版本
+diy.tcp.agreement.version: 0.0.1
+
+
+# HTTP协议版本
+diy.http.agreement.version: 0.0.1
+
+
+#token 加密密钥
+token.aes.pwd: liangshuai
+
+# APP 稳点版本下载地址
+diy.app.up.url.android: https://www.baidu.com/android
+diy.app.up.url.ios: https://www.baidu.com/ios
+diy.app.up.url.all: https://www.baidu.com/all

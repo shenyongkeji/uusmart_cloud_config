@@ -1,0 +1,22 @@
+eureka:
+    instance:
+        prefer-ip-address: true
+        hostname: goodtime-iot.com
+        instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+        lease-renewal-interval-in-seconds: 10
+        lease-expiration-duration-in-seconds: 30
+    
+
+      
+management:
+  security:
+    enabled: false
+
+# 多个tcp地址 XX.XX.XX.XX, XX.XX.XX.XX
+mqtt:
+    urls : tcp://goodtime-iot.com:1883
+    client:
+        id : s/voiceSer
+        topic : s/voiceSer
+        
+diy.redis.dingdong: redis:dingdong:token

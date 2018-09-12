@@ -1,0 +1,28 @@
+eureka: 
+     instance:
+        prefer-ip-address: true
+        hostname: goodtime-iot.com
+        instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+        lease-renewal-interval-in-seconds: 10
+        lease-expiration-duration-in-seconds: 30
+    
+
+      
+management:
+  security:
+    enabled: false
+
+# 多个tcp地址 XX.XX.XX.XX, XX.XX.XX.XX
+mqtt:
+    urls : tcp://goodtime-iot.com:1883
+    client:
+        id : s/wisdomTest
+        topic : s/wisdomTest
+        
+#Ribbon的负载均衡策略
+ribbon.NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+ribbon.MaxAutoRetriesNextServer: 0
+hystrix.command.default.execution.isolation.strategy:  SEMAPHORE
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+#txmanager地址
+tm.manager.url: http://goodtime-iot.com:8899/tx/manager/
