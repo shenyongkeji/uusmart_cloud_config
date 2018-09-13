@@ -53,6 +53,9 @@ zuul:
     api-i:
       path: /u-vivo/**
       serviceId: uusmart-vivo
+    api-j:
+      path: /u-oppo/**
+      serviceId: uusmart-oppo
       
 ribbon:
     ReadTimeout: 60000
